@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
+import { ctxType } from "../types/Context";
+import ctx from "../context/ArticleContext";
 import TheDunKnowLogo from "./TheDunKnowLogo";
 
 interface Props { }
@@ -13,7 +15,7 @@ const Container = styled.div`
   width: 100%;
   text-align: left;
   font-size: 12px;
- 
+  z-index: 11;
   div ul {
     transition: color ease .5s;
 
@@ -56,10 +58,15 @@ const Container = styled.div`
 
 
 const Footer: React.FC<Props> = () => {
+
+  const articleCtx: ctxType = useContext(ctx)
+
+  console.log(articleCtx.invert);
+
   return (
     <>
       <Container>
-        <TheDunKnowLogo size={"large"} />
+        <TheDunKnowLogo invert={articleCtx.invert} size={"large"} />
         <div>
           <ul>
             <li>About</li>

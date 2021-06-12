@@ -3,14 +3,16 @@ import styled from "styled-components";
 
 interface Props {
   size: string;
+  invert: boolean;
 }
 
-const Container = styled.div<{ size?: string }>`
+const Container = styled.div<{ size?: string, invert?: boolean }>`
   div {
     display: inline-flex;
     flex-flow: column wrap;
     margin-bottom:15px;
-    color: black;
+    
+    color: ${(props) => props.invert ? "white" : "black"};
 
 
     span:nth-child(1) {
@@ -50,10 +52,11 @@ const Container = styled.div<{ size?: string }>`
 
 
 
-const TheDunKnowLogo: React.FC<Props> = ({ size }) => {
+const TheDunKnowLogo: React.FC<Props> = ({ size, invert }) => {
+
 
   return (
-    <Container size={size}>
+    <Container invert={invert} size={size}>
       <div>
         <span>The Dun</span>
         <span>Know</span>

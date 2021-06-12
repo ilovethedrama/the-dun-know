@@ -6,6 +6,7 @@ export interface Article {
   imageGallery: Image[];
   slug: string;
   articleText: string;
+  subtitle: string;
 }
 
 export interface Image {

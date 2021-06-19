@@ -85,7 +85,7 @@ box-sizing:content-box;
 `;
 
 const ArticleContent = styled.div`
-padding: 20px;
+padding: 0 20px;
 display: grid;
 column-gap: 20px;
 grid-template-columns: 1fr 700px 1fr;
